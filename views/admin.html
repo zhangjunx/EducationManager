@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>智慧校园</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="icon" href="image/logo3.png" sizes="32x32">
+  <link rel="stylesheet" href="../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../layuiadmin/style/admin.css" media="all">
+</head>
+<body class="layui-layout-body">
+  
+  <div id="LAY_app">
+    <div class="layui-layout layui-layout-admin">
+      <div class="layui-header">
+        <!-- 头部区域 -->
+        <ul class="layui-nav layui-layout-left">
+          <li class="layui-nav-item layadmin-flexible" lay-unselect>
+            <a href="javascript:;" layadmin-event="flexible" title="侧边伸缩">
+              <i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
+            </a>
+          </li>
+          <!-- <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="http://www.layui.com/admin/" target="_blank" title="前台">
+              <i class="layui-icon layui-icon-website"></i>
+            </a>
+          </li> -->
+          <li class="layui-nav-item" lay-unselect>
+            <a href="javascript:;" layadmin-event="refresh" title="刷新">
+              <i class="layui-icon layui-icon-refresh-3"></i>
+            </a>
+          </li> 
+          <!-- <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <input type="text" placeholder="搜索..." autocomplete="off" class="layui-input layui-input-search" layadmin-event="serach" lay-action="template/search.html?keywords="> 
+          </li> -->
+        </ul>
+        <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
+         <li class="layui-nav-item layui-form" lay-unselect style="margin-top:6px;">
+            <div class="layui-form-label" style="color:#666">当前校区</div>
+				<div class="layui-input-block">
+	                <select id="nowSchool" lay-filter="test">
+	                 </select>
+	             </div>
+          </li>
+        	
+        
+		 <li class="layui-nav-item" lay-unselect>
+            <a lay-href="javascript:;" layadmin-event="message" lay-text="消息中心">
+              <i class="layui-icon layui-icon-notice"></i>  
+              
+              <!-- 如果有新消息，则显示小圆点 -->
+             <!--  <span class="layui-badge-dot"></span> -->
+            </a>
+          </li>
+          <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="javascript:;" layadmin-event="theme">
+              <i class="layui-icon layui-icon-theme"></i>
+            </a>
+          </li>
+          <!-- <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="javascript:;" layadmin-event="note">
+              <i class="layui-icon layui-icon-note"></i>
+            </a>
+          </li> -->
+          <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="javascript:;" layadmin-event="fullscreen">
+              <i class="layui-icon layui-icon-screen-full"></i>
+            </a>
+          </li>
+          <li class="layui-nav-item" lay-unselect>
+            <a href="javascript:;">
+              <img src="image/person.png" id="loginUserImg" class="layui-nav-img">
+              <cite id="loginUser"></cite>
+            </a>
+            <dl class="layui-nav-child">
+              <!-- <dd><a lay-href="set/user/info.html">基本资料</a></dd> -->
+              <dd><a lay-href="user/password.html">修改密码</a></dd>
+              <hr>
+              <dd id="exit" style="text-align: center;"><a>退出</a></dd>
+            </dl>
+          </li>
+          
+          <!-- <li class="layui-nav-item layui-hide-xs" lay-unselect>
+            <a href="javascript:;" layadmin-event="about"><i class="layui-icon layui-icon-more-vertical"></i></a>
+          </li> -->
+          <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-unselect>
+            <a href="javascript:;" layadmin-event="more"><i class="layui-icon layui-icon-more-vertical"></i></a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- 侧边菜单 -->
+      <div class="layui-side layui-side-menu">
+        <div class="layui-side-scroll">
+          <div class="layui-logo" lay-href="home/console.html">
+            <span>智慧校园</span>
+          </div>
+          <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
+         <li data-name="systemManagement" class="layui-nav-item layui-nav-itemed">
+              <a href="javascript:;" lay-tips="系统管理" lay-direction="2">
+                <i class="layui-icon layui-icon-home"></i>
+                <cite>系统管理</cite>
+              </a>
+              <dl class="layui-nav-child">
+              	<dd data-name="publicWelfareEducation.html" class="layui-this">
+                  <a lay-href="systemManagement/publicWelfareEducation.html">公益助学</a>
+                </dd>
+                <dd data-name="schoolManagement">
+                  <a lay-href="systemManagement/schoolManagement.html">校区管理</a>
+                </dd>
+                 <dd data-name="appletUserManagement">
+                  <a lay-href="systemManagement/appletUserManagement.html">家长用户管理</a>
+                </dd>
+                 <dd data-name="teacherUserManagement">
+                  <a lay-href="systemManagement/teacherUserManagement.html">教师用户管理</a>
+                </dd>
+                 <dd data-name="backUserManagement">
+                  <a lay-href="systemManagement/backUserManagement.html">后台用户管理</a>
+                </dd>
+                 <dd data-name="roleManagement">
+                  <a lay-href="systemManagement/roleManagement.html">角色管理</a>
+                </dd>
+                <dd data-name="userRights_admin">
+                  <a lay-href="systemManagement/userRights_admin.html">角色权限分配</a>
+                </dd>
+                <dd data-name="userRole">
+                  <a lay-href="systemManagement/userRole.html">用户角色分配</a>
+                </dd>
+                <dd data-name="taskManagement">
+                  <a lay-href="systemManagement/taskManagement.html">任务管理</a>
+                </dd>
+                 <dd data-name="systemLog">
+                  <a lay-href="systemManagement/systemLog.html">系统日志</a>
+                </dd>
+              </dl>
+            </li>
+           <!--  <li data-name="jiaoWuManagement" class="layui-nav-item">
+              <a href="javascript:;" lay-tips="教务管理" lay-direction="2">
+                <i class="layui-icon layui-icon-component"></i>
+                <cite>教务管理</cite>
+              </a>
+               <dl class="layui-nav-child">
+                <dd data-name="academicYearManagement">
+                  <a lay-href="jiaoWuManagement/academicYearManagement.html">学年管理</a>
+                </dd>
+                <dd data-name="gradeManagement">
+                  <a lay-href="jiaoWuManagement/gradeManagement.html">年级管理</a>
+                </dd>
+                 <dd data-name="classManagement">
+                  <a lay-href="jiaoWuManagement/classManagement.html">班级管理</a>
+                </dd>
+                <dd data-name="studentManagement">
+                  <a lay-href="jiaoWuManagement/studentManagement.html">学生管理</a>
+                </dd>
+              </dl>
+            </li>
+            <li data-name="deviceManagement" class="layui-nav-item">
+              <a href="javascript:;" lay-tips="设备管理" lay-direction="2">
+                <i class="layui-icon layui-icon-senior"></i>
+                <cite>设备管理</cite>
+              </a>
+               <dl class="layui-nav-child">
+                <dd data-name="braceletManagement">
+                   <a lay-href="deviceManagement/braceletManagement.html">手环管理</a>
+                </dd>	
+                <dd data-name="autoReadSettings">
+                   <a lay-href="deviceManagement/autoReadSettings.html">自动读取设置</a>
+                </dd>	
+              </dl>
+            </li>
+            <li data-name="paymentSettings" class="layui-nav-item">
+              <a href="javascript:;" lay-tips="支付设置" lay-direction="2">
+                <i class="layui-icon layui-icon-template"></i>
+                <cite>支付设置</cite>
+              </a>
+               <dl class="layui-nav-child">
+                <dd data-name="paymentModel">
+                   <a lay-href="paymentSettings/paymentModel.html">支付模板</a>
+                </dd>	
+              </dl>
+            </li>
+              <li data-name="dataCenter" class="layui-nav-item">
+              <a href="javascript:;" lay-tips="数据中心" lay-direction="2">
+                <i class="layui-icon layui-icon-website"></i>
+                <cite>数据中心</cite>
+              </a>
+               <dl class="layui-nav-child">
+                <dd data-name="studentLocation">
+                   <a lay-href="dataCenter/studentLocation.html">学生定位</a>
+                </dd>	
+                <dd data-name="orderIssue">
+                   <a lay-href="dataCenter/orderIssue.html">命令下发</a>
+                </dd>
+              </dl>
+            </li>
+            <li data-name="statisticalReport" class="layui-nav-item">
+              <a href="javascript:;" lay-tips="统计报表" lay-direction="2">
+                <i class="layui-icon layui-icon-table"></i>
+                <cite>统计报表</cite>
+              </a>
+               <dl class="layui-nav-child">
+                <dd data-name="currentTemperature">
+                   <a lay-href="statisticalReport/currentTemperature.html">当前体温</a>
+                </dd>
+                <dd data-name="temperatureRecord">
+                   <a lay-href="statisticalReport/temperatureRecord.html">体温记录</a>
+                </dd>
+                <dd data-name="abnormalTemperature">
+                   <a lay-href="statisticalReport/abnormalTemperature.html">异常记录</a>
+                </dd>
+              </dl>
+            </li> -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- 页面标签 -->
+      <div class="layadmin-pagetabs" id="LAY_app_tabs">
+        <div class="layui-icon layadmin-tabs-control layui-icon-prev" layadmin-event="leftPage"></div>
+        <div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage"></div>
+        <div class="layui-icon layadmin-tabs-control layui-icon-down">
+          <ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">
+            <li class="layui-nav-item" lay-unselect>
+              <a href="javascript:;"></a>
+              <dl class="layui-nav-child layui-anim-fadein">
+                <dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>
+                <dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>
+                <dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>
+              </dl>
+            </li>
+          </ul>
+        </div>
+        <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
+          <ul class="layui-tab-title" id="LAY_app_tabsheader">
+            <li lay-id="systemManagement/publicWelfareEducation.html" lay-attr="systemManagement/publicWelfareEducation.html" class="layui-this"><i class="layui-icon layui-icon-home"></i></li>
+          </ul>
+        </div>
+      </div>
+      
+      
+      <!-- 主体内容 -->
+      <div class="layui-body" id="LAY_app_body">
+        <div class="layadmin-tabsbody-item layui-show">
+          <iframe src="systemManagement/publicWelfareEducation.html" frameborder="0" class="layadmin-iframe"></iframe>
+        </div>
+      </div>
+      
+      <!-- 辅助元素，一般用于移动设备下遮罩 -->
+      <div class="layadmin-body-shade" layadmin-event="shade"></div>
+    </div>
+  </div>
+  <script src="public_js/path.js"></script>  
+  <script src="public_js/jquery.min.js"></script>  
+  <script src="../layuiadmin/layui/layui.js"></script>
+  
+  <script>
+  layui.config({
+    base: '../layuiadmin/' //静态资源所在路径
+  }).extend({
+    index: 'lib/index' //主入口模块
+  }).use('index');
+  
+  layui.use("form",function(){
+	  var $ = layui.$,
+	  form = layui.form;
+	  form.on('select(test)', function(data){
+		  var schoolname=$(data.elem).find("option:selected").html(); 
+		  var schoolid=data.value; //得到被选中的值
+		  changeSchoole(schoolid,schoolname);
+		});
+  }) 
+  if(sessionStorage.sessionID== "undefined" ||sessionStorage.sessionID==null||sessionStorage.sessionID==""){
+	  window.location.href="../index.html";
+  }
+  var usercode=getUrlParam("usercode");
+  getThisLoginSchoolList();
+  //获取当前用户下的校区
+  function getThisLoginSchoolList(){
+	  $.ajax({
+		  url:url+"/login/getThisLoginSchoolList",
+		  type:"post",
+		  success:function(data){
+			  console.log(data);
+			  if(data.result){
+				  var res=data.data;
+				  var count=0;
+				  for(var item of res){
+					  var $opt=$("<option value='"+item.SCHOOLID+"'>"+item.SCHOOLNAME+"</option>");
+					  $("#nowSchool").append($opt);
+				  }
+				  for(var item of res){
+					  if(item.IFNEWLOGIN==1){//当前校区
+						  count=1;
+						  $("#nowSchool").val(item.SCHOOLID);
+						  getOneInfo();//获取登录用户的姓名和头像
+					  }
+				  }
+				  if(count==0){
+					  var schoolid=$("#nowSchool").val();
+					  var schoolname=$("#nowSchool option:selected").html();
+					  changeSchoole(schoolid,schoolname);
+					  getOneInfo();//获取登录用户的姓名和头像
+				  }
+				  layui.use("form",function(){
+					  var form=layui.form;
+				  		form.render();
+				  })
+				  
+				  
+			  }
+		  }
+	  })
+  } 
+
+//提交当前校区
+function changeSchoole(schoolID,schoolName){
+ $.ajax({
+  url:url+"/public/changeSchoole",
+  type:"post",
+  data:{"schoolID":schoolID,"schoolName":schoolName},
+  success:function(data){
+	  if(data.result){
+		  window.location.reload();  
+	  }
+  }
+ })	
+}
+
+//关闭全部标签页
+function closeAllTabs(){
+	
+  events.closeOtherTabs('all');
+  //location.hash = '';
+}
+
+//点击退出
+$("#exit").click(function(){
+ sessionStorage.sessionID="";
+ window.location.href="../index.html";
+})
+
+//获取当前登录用户信息
+function getOneInfo(){
+	$.ajax({
+		url:url+"/user/getOneInfo",
+		type:"post",
+		data:{"fid":getUrlParam("fid")},
+		success:function(data){
+			console.log(data);
+			if(data.result){
+				 $("#loginUser").html(data.data.USERNAME);
+				 if(data.data.LOGINIMG!=undefined&&data.data.LOGINIMG!=null&&data.data.LOGINIMG!=""){
+						$("#loginUserImg").attr("src","data:image/png;base64,"+data.data.LOGINIMG);
+				}
+			}
+		}
+	})
+}
+//url地址中解析参数
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var paramsString = window.location.search.substring(1);
+    var r = window.decodeURIComponent(window.atob(paramsString)).match(reg);
+    if (r != null) return decodeURIComponent(r[2]); return null;
+}
+
+  </script>
+</body>
+</html>
+
+

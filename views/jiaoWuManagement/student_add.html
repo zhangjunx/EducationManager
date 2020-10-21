@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>学生管理</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+ <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="css/studentManagement.css" media="all">
+</head>
+<body>
+	<input type="hidden" id="fid">
+	<div class="layui-fluid">
+		<div class="layui-row">
+			<div class="layui-col-md9">
+					<div class="layui-card">
+			<div class="layui-form layui-card-header layuiadmin-card-header-auto">
+				<div class="layui-form-item">
+					<div class="layui-col-lg4">
+							<label class="layui-form-label">头像</label>
+							<div class="layui-input-block" id="headImg">
+								<img src="../image/add_img.png" class="schoolImg" id="img">
+		                        <input type="file" class="studentImg" id="studentIpt" title="点击更换图片" accept=".jpg,.png,.gif">
+							</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">学号</label>
+						<div class=layui-input-block>
+							<input type="text" name=studentNo id="studentNo" 
+								autocomplete="off" lay-verify="required" class="layui-input" placeholder="请输入学号">
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">姓名</label>
+						<div class=layui-input-block>
+							<input type="text" name=studentName id="studentName" 
+								autocomplete="off" lay-verify="required" class="layui-input" placeholder="请输入姓名">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">身份证号</label>
+						<div class="layui-input-block">
+							<input type="text" name="IDCard" id="IDCard" 
+								autocomplete="off" lay-verify="idcode" class="layui-input" placeholder="请输入身份证号">
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">性别</label>
+						<div class="layui-input-block" style="margin-left:142px;">
+							 <input type="radio" name="sex" value="男" title="男">
+      						 <input type="radio" name="sex" value="女" title="女" checked>
+						</div>
+					 </div> 
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">年龄</label>
+						<div class="layui-input-block">
+							<input type="number" name="age" id="age" 
+								autocomplete="off"  class="layui-input" placeholder="请输入年龄">
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">国籍</label>
+						<div class="layui-input-block">
+							<input type="text" name="nationality" id="nationality" 
+								autocomplete="off"  class="layui-input" placeholder="请输入籍贯">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">民族</label>
+						<div class="layui-input-block">
+							<input type="text" name="nation" id="nation" 
+								autocomplete="off"  class="layui-input" placeholder="请输入民族">
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">出生日期</label>
+						<div class="layui-input-block">
+							<input type="text" name="birthDay" id="birthDay" 
+								autocomplete="off"  class="layui-input date" placeholder="请选择出生日期">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">家庭住址</label>
+						<div class="layui-input-block">
+							<input type="text" name="homePlace" id="homePlace" 
+								autocomplete="off"  class="layui-input" placeholder="请输入家庭住址">
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">家庭坐标</label>
+						<div class="layui-input-block">
+							<input type="text" name="homePoint" id="homePoint" 
+								autocomplete="off"  class="layui-input" placeholder="请输入家庭坐标">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">卡号</label>
+						<div class="layui-input-block">
+							<input type="number" name="cardNo" id="cardNo" 
+								autocomplete="off"  class="layui-input" placeholder="请输入卡号">
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">SM卡号</label>
+						<div class="layui-input-block">
+							<input type="number" name="SMCode" id="SMCode" 
+								autocomplete="off"  class="layui-input" placeholder="请输入SM卡号">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+							<label class="layui-form-label">学年</label>
+							<div class="layui-input-block">
+								<select id="yearID" name="yearID" lay-verify="required">
+									<option value="">请选择</option>
+								</select>
+							</div>
+						</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">学期</label>
+						<div class="layui-input-block">
+							<select id="term" name="term" lay-verify="required">
+								<option value="">请选择</option>
+								<option value="上学期">上学期</option>
+								<option value="下学期">下学期</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">年级</label>
+						<div class="layui-input-block">
+							<select id="gradeID" name="gradeID" lay-verify="required">
+								<option value="">请选择</option>
+							</select>
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">班级</label>
+						<div class="layui-input-block">
+							<select id="classID" name="classID" lay-verify="required">
+								<option value="">请选择</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">第一联系人</label>
+						<div class="layui-input-block">
+							<input type="text" name="firstParent" id="firstParent" 
+								autocomplete="off" lay-verify="required" class="layui-input" placeholder="请输入第一联系人">
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">联系电话</label>
+						<div class="layui-input-block">
+							<input type="number" name="phone1" id="phone1" 
+								autocomplete="off" lay-verify="phone" class="layui-input" placeholder="请输入联系电话">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">第二联系人</label>
+						<div class="layui-input-block">
+							<input type="text" name="secondParent" id="secondParent" 
+								autocomplete="off"  class="layui-input" placeholder="请输入第二联系人">
+						</div>
+					</div>
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">联系电话</label>
+						<div class="layui-input-block">
+							<input type="number" name="phone2" id="phone2" 
+								autocomplete="off" class="layui-input" placeholder="请输入联系电话">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">备注</label>
+						<div class="layui-input-block">
+							<textarea name="remark" id="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+						</div>
+					</div>
+				</div>
+				
+				<div class="layui-form-item layui-layout-admin">
+					<div class="layui-input-block">
+						<div class="layui-footer" style="left: 0;">
+							<button class="layui-btn" lay-submit=""
+								lay-filter="component-form-demo1">立即提交</button>
+							<button type="reset" class="layui-btn layui-btn-primary" id="resetData">重置</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+			</div>
+			<div class="layui-col-md3">
+				<!-- 高德地图 -->
+				<div id="allmap" style="width:100%;height:400px;"></div>
+				<div class="layui-form">
+		        <div class="layui-form-item">
+		          <div class="layui-inline">
+		            <div class="layui-input-block" style="margin-left:0">
+		              <input type="text" name="cityName" id="cityName" placeholder="请输入城市名" autocomplete="off" class="layui-input">
+		            </div>
+		          </div>
+		          <div class="layui-inline">
+		            <button class="layui-btn layuiadmin-btn-useradmin" lay-submit lay-filter="LAY-user-front-search">
+		              <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+		            </button>
+		          </div>
+		        </div>
+		      </div>
+			</div>
+		</div>
+	
+	</div>
+	<script src="../public_js/path.js"></script>  
+	<script src="../public_js/jquery.min.js"></script>  
+    <script src="../layui/layui.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=6b807c5fc681450799f80a7890c3594b&plugin=AMap.Geocoder"></script>
+    <script src="js/student_add.js"></script>
+   
+</body>
+</html>

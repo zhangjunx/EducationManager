@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>小程序用户管理</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all"> 
+  <link rel="stylesheet" href="css/schoolManagement.css" media="all">
+</head>
+<body>
+	<input type="hidden" id="fid">
+	<div class="layui-fluid">
+		<div class="layui-card">
+			<div class="layui-form layui-card-header layuiadmin-card-header-auto">
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">用户姓名</label>
+						<div class=layui-input-block>
+							<input type="text" name="name" id="name" 
+								autocomplete="off" lay-verify="required"  class="layui-input" placeholder="请输入用户名">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">用户头像</label>
+						<div class="layui-input-block" id="schoolIcon">
+							<img src="../image/add_img.png" class="schoolImg" id="img" style="width:102px;height:102px">
+	                        <input type="file" class="schoolLogo" id="logoIpt" title="点击更换图片" accept=".jpg,.png,.gif" style="width:102px;height:102px">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">联系电话</label>
+						<div class=layui-input-block>
+							<input type="text" name="phoneNum" id="phoneNum" 
+								autocomplete="off" lay-verify="phoneNum" class="layui-input" placeholder="请输入联系电话">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">校区权限</label>
+						<div class="layui-input-block" id="schoolList">
+							<!-- <input type="checkbox" name="" title="郑州大学" lay-skin="primary" checked> -->
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">状态</label>
+						<div class=layui-input-block>
+							<input type="checkbox" id="status" checked="" lay-skin="switch" lay-filter="component-form-switchTest" lay-text="启用|禁用">
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">备注</label>
+						<div class="layui-input-block">
+							<textarea name="remark" id="remark" placeholder="请输入内容" class="layui-textarea"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="layui-form-item layui-layout-admin">
+					<div class="layui-input-block">
+						<div class="layui-footer" style="left: 0;">
+							<button class="layui-btn" lay-submit=""
+								lay-filter="component-form-demo1">立即提交</button>
+							<button type="reset" class="layui-btn layui-btn-primary" id="resetData">重置</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<script src="../public_js/path.js"></script>  
+	<script src="../public_js/jquery.min.js"></script>  
+    <script src="../layui/layui.js"></script>
+    <script src="js/appletUser_add.js"></script>
+   
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>智慧校园</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/default.css">
+  <link rel="stylesheet" href="css/studentLocation.css" media="all">
+</head>
+<body style="background: url(../image/smartSchool_bg.png) no-repeat -11px;">
+	<img src="../image/closeYeMian.png" class="closeYeMian">
+  <div class="layui-fluid smartSchool">
+    <div class="layui-layout layui-layout-admin" style="height:100px;">
+    	<div class="smartSchool-title">
+    		<div class="title-in">智慧校园管理平台</div>
+    	</div>
+    </div>
+    <div class="layui-row" style="padding:0 15px 15px;box-sizing:border-box;height:calc(100% - 102px)">
+    	<div class="layui-col-md4 smartSchool-left">
+    		<div class="smartSchool-left-top">
+    			<div class="schoolPeople">
+    				<h3 class="schoolPeople-number" id="inSchool">809</h3>
+    				<p>学生在校人数</p>
+    				<div class="schoolPeople-progress">
+    					<div class="progress-bar" id="inProgress">学生在校占比</div>
+    					<span class="peoplePercent" id="inSchoolPercent">92%</span>
+    				</div>
+    			</div>
+    			<div class="schoolPeople">
+    				<h3 class="schoolPeople-number" id="outSchool">12</h3>
+    				<p>学生不在校人数</p>
+    				<div class="schoolPeople-progress">
+    					<div class="progress-bar" id="outProgress" >学生不在校占比</div>
+    					<span class="peoplePercent" id="outSchoolPercent">8%</span>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="smartSchool-left-center">
+    			 <div class="layui-card">
+    			 	 <div class="schoolLeftTop"><img src="../image/schoolLeftCenter.png"></div>
+    			 	 <div class="schoolRightTop"><img src="../image/schoolRightTop.png"></div>
+    			 	  <div class="schoolCircle"><img src="../image/schoolCircle.png"></div>
+				     <div class="layui-card-header">学校概况</div>
+				        <div class="layui-card-body layui-form schoolBox stuWithGrade">
+						     <!-- <div class="schoolGrade">
+						     	<h3>一年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div>
+						     <div class="schoolGrade">
+						     	<h3>二年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div>
+						     <div class="schoolGrade">
+						     	<h3>三年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div>
+						     <div class="schoolGrade">
+						     	<h3>四年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div>
+						     <div class="schoolGrade">
+						     	<h3>五年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div>
+						     <div class="schoolGrade">
+						     	<h3>六年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div>
+						     <div class="schoolGrade">
+						     	<h3>七年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div>
+						     <div class="schoolGrade">
+						     	<h3>八年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div>
+						     <div class="schoolGrade">
+						     	<h3>九年级人数</h3>
+						     	<p class="gradeNum">123</p>
+						     </div> -->
+				        </div>
+				   </div>
+    		</div>
+    		<div class="smartSchool-left-center">
+    			 <div class="layui-card">
+    			 	 <div class="schoolLeftTop"><img src="../image/schoolLeftCenter.png"></div>
+    			 	 <div class="schoolRightTop"><img src="../image/schoolRightTop.png"></div>
+    			 	  <div class="schoolCircle"><img src="../image/schoolCircle.png"></div>
+				     <div class="layui-card-header">学生体温统计</div>
+				        <div class="layui-card-body layui-form schoolBox">
+				        	<div id="studentTemperature" style="height:200px;"></div>
+				        </div>
+				   </div>
+    		</div>
+    	</div>
+    	<div class="layui-col-md4 smartSchool-left smartSchool-center">
+    		<div class="schoolCenterClock">
+    			<div class="atSchoolPeople">2000</div>
+    			<div class="schoolText">当前在校数</div>
+    			<div class="realPeopleBox">
+    				<span class="realPeopleText">学生:</span>
+    				<span class="realPeopleNum">1173</span>
+    			</div>
+    		</div>
+    		<div class="smartSchool-left-center realTimeTem">
+    			 <div class="layui-card">
+    			 	 <div class="schoolLeftTop"><img src="../image/schoolLeftCenter.png"></div>
+    			 	 <div class="schoolRightTop"><img src="../image/schoolRightTop.png"></div>
+    			 	  <div class="schoolCircle"><img src="../image/schoolCircle.png"></div>
+				     <div class="layui-card-header">实时动态</div>
+				        <div class="layui-card-body layui-form">
+				        	<table class="studentTable">
+								<tr>
+									<th width="300">姓名</th>
+									<th width="300">班级</th>
+									<th width="300">体温状态</th>
+									<th width="400">时间</th>
+								</tr>				        	
+				        		<tr>
+				        			<td>李佳琪</td>
+				        			<td>三年级</td>
+				        			<td>正常</td>
+				        			<td>2020-08-14 10:42</td>
+				        		</tr>
+				        		<tr>
+				        			<td>秦昊</td>
+				        			<td>三年级</td>
+				        			<td>正常</td>
+				        			<td>2020-08-14 10:42</td>
+				        		</tr>
+				        		<tr>
+				        			<td>张起灵</td>
+				        			<td>三年级</td>
+				        			<td>正常</td>
+				        			<td>2020-08-14 10:42</td>
+				        		</tr>
+				        		<tr>
+				        			<td>吴邪</td>
+				        			<td>三年级</td>
+				        			<td>正常</td>
+				        			<td>2020-08-14 10:42</td>
+				        		</tr>
+				        		<tr class="noNormal">
+				        			<td>潘子</td>
+				        			<td>三年级</td>
+				        			<td>异常</td>
+				        			<td>2020-08-14 10:42</td>
+				        		</tr>
+				        	</table>
+				        </div>
+				   </div>
+    		</div>
+    	</div>
+    	<div class="layui-col-md4 smartSchool-left">
+    		<div class="smartSchool-left-center">
+    			 <div class="layui-card">
+    			 	 <div class="schoolLeftTop"><img src="../image/schoolLeftCenter.png"></div>
+    			 	 <div class="schoolRightTop"><img src="../image/schoolRightTop.png"></div>
+    			 	  <div class="schoolCircle"><img src="../image/schoolCircle.png"></div>
+				     <div class="layui-card-header">本周年级到课率TOP3</div>
+				        <div class="layui-card-body layui-form gradeClass">
+				        	<div>
+				        		<div id="circles-1"></div>
+				        		<span class="circles-1-text circleText">高二</span>
+				        	</div>
+				        		<div>
+					        		<div id="circles-2"></div>
+					        		<span class="circles-2-text circleText">高一</span>
+				        		</div>
+				        		<div>
+				        			<div id="circles-3"></div>
+				        			<span class="circles-3-text circleText">初二</span>
+				        		</div>
+				        </div>
+				   </div>
+    		</div>
+    		<div class="smartSchool-left-center">
+    			 <div class="layui-card">
+    			 	 <div class="schoolLeftTop"><img src="../image/schoolLeftCenter.png"></div>
+    			 	 <div class="schoolRightTop"><img src="../image/schoolRightTop.png"></div>
+    			 	  <div class="schoolCircle"><img src="../image/schoolCircle.png"></div>
+				     <div class="layui-card-header">本周学生运动统计</div>
+				        <div class="layui-card-body layui-form schoolBox">
+				        	<div id="sportsStudents" style="height:200px"></div>
+				        </div>
+				   </div>
+    		</div>
+    		<div class="smartSchool-left-center">
+    			 <div class="layui-card">
+    			 	 <div class="schoolLeftTop"><img src="../image/schoolLeftCenter.png"></div>
+    			 	 <div class="schoolRightTop"><img src="../image/schoolRightTop.png"></div>
+    			 	  <div class="schoolCircle"><img src="../image/schoolCircle.png"></div>
+				     <div class="layui-card-header">学生分布情况</div>
+				        <div class="layui-card-body layui-form schoolBox">
+				        	<div id="studentSpread" style="height:200px"></div>
+				        </div>
+				   </div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+   <script src="../public_js/path.js"></script>  
+   <script src="../public_js/jquery.min.js"></script>  
+    <script src="../public_js/echarts.min.js"></script>  
+    <script src="js/circles.min.js"></script>
+   <script src="../layui/layui.js"></script> 
+   <script src="js/smartSchool.js"></script> 
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>手环设置</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+</head>
+<body>
+  <div class="layui-fluid">
+  	 <div class="layui-card">
+     <div class="layui-card-header">位置上传设置</div>
+        <div class="layui-card-body layui-form">
+		     <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">上传间隔</label>
+					<div class=layui-input-block>
+						<input type="number" min=1 autocomplete="off" id="locationTime"  class="layui-input" placeholder="秒">
+					</div>
+				</div>
+				<button class="layui-btn" style="margin-left:20px" id="locationSend" data-uid="6408092B349246F5AC2E1ABF739A555B">命令下发</button>
+		     </div>
+        </div>
+    </div>
+     <div class="layui-card">
+     <div class="layui-card-header">计步设置</div>
+        <div class="layui-card-body layui-form">
+		     <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">计步开关</label>
+					<div class=layui-input-block>
+						<select id="stepByStep">
+							<option value="">请选择</option>
+							<option value="1">打开</option>
+							<option value="0">关闭</option>
+						</select>
+					</div>
+				</div>
+				<button class="layui-btn" style="margin-left:20px" id="stepSend" data-uid="6408092B349246F5AC2E1ABF739A555B">命令下发</button>
+		     </div>
+        </div>
+    </div>
+    <div class="layui-card">
+     <div class="layui-card-header">计步时间段设置</div>
+        <div class="layui-card-body layui-form">
+		     <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">时间段</label>
+					<div class=layui-input-block>
+						<input type="text" autocomplete="off" id="stepStart"  class="layui-input date" style="width:49%;display:inline-block;margin-right:4px">--<input type="text" autocomplete="off" id="stepEnd"  class="layui-input date" style="width:49%;display:inline-block">
+					</div>
+				</div>
+				<button class="layui-btn" style="margin-left:20px" id="stepTimeSend" data-uid="6408092B349246F5AC2E1ABF739A555B">命令下发</button>
+		     </div>
+        </div>
+    </div>
+     <div class="layui-card">
+     <div class="layui-card-header">免打扰设置</div>
+        <div class="layui-card-body layui-form">
+		     <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">时间段1</label>
+					<div class=layui-input-block>
+						<input type="text" autocomplete="off" id="startTime1"  class="layui-input date disturb" style="width:49%;display:inline-block;margin-right:4px">--<input type="text" autocomplete="off" id="endTime1"  class="layui-input date disturb" style="width:49%;display:inline-block">
+					</div>
+				</div>
+		     </div>
+		      <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">时间段2</label>
+					<div class=layui-input-block>
+						<input type="text" autocomplete="off" id="startTime2"  class="layui-input date disturb" style="width:49%;display:inline-block;margin-right:4px">--<input type="text" autocomplete="off" id="endTime2"  class="layui-input date disturb" style="width:49%;display:inline-block">
+					</div>
+				</div>
+		     </div>
+		      <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">时间段3</label>
+					<div class=layui-input-block>
+						<input type="text" autocomplete="off" id="startTime3"  class="layui-input date disturb" style="width:49%;display:inline-block;margin-right:4px">--<input type="text" autocomplete="off" id="endTime3"  class="layui-input date disturb" style="width:49%;display:inline-block">
+					</div>
+				</div>
+		     </div>
+		     <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">时间段4</label>
+					<div class=layui-input-block>
+						<input type="text" autocomplete="off" id="startTime4"  class="layui-input date disturb" style="width:49%;display:inline-block;margin-right:4px">--<input type="text" autocomplete="off" id="endTime4"  class="layui-input date disturb" style="width:49%;display:inline-block">
+					</div>
+				</div>
+				<button class="layui-btn" style="margin-left:20px" id="disturbSend" data-uid="6408092B349246F5AC2E1ABF739A555B">命令下发</button>
+		     </div>
+        </div>
+    </div>
+  <!--   <div class="layui-card">
+     <div class="layui-card-header">体温设置</div>
+        <div class="layui-card-body layui-form">
+        	  <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">间隔开关</label>
+					<div class=layui-input-block>
+						<select id="temperatureSwitch">
+							<option value="">请选择</option>
+							<option value="1">打开</option>
+							<option value="0">关闭</option>
+						</select>
+					</div>
+				</div>
+		     </div>
+		     <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">测温间隔</label>
+					<div class=layui-input-block>
+						<input type="number" min=1 max=12 step=1 value="1" autocomplete="off" id="temperatureTime"  class="layui-input" placeholder="小时">
+					</div>
+				</div>
+				<button class="layui-btn" style="margin-left:20px" id="temperatureSend" data-uid="6408092B349246F5AC2E1ABF739A555B">命令下发</button>
+		     </div>
+        </div>
+    </div> -->
+        <div class="layui-card">
+     <div class="layui-card-header">心率设置</div>
+        <div class="layui-card-body layui-form">
+		     <div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">测量间隔</label>
+					<div class=layui-input-block>
+						<input type="number" min=300 max=65535 value=300 autocomplete="off" id="heartTime"  class="layui-input" placeholder="秒">
+					</div>
+				</div>
+				<button class="layui-btn" style="margin-left:20px" id="heartSend" data-uid="6408092B349246F5AC2E1ABF739A555B">命令下发</button>
+		     </div>
+        </div>
+    </div>
+    
+  </div>
+  <script src="../public_js/path.js"></script>  
+   <script src="../public_js/jquery.min.js"></script>  
+  <script src="../layui/layui.js"></script> 
+   <script src="js/autoReadSetings.js"></script>
+</body>
+</html>

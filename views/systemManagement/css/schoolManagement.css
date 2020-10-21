@@ -1,0 +1,47 @@
+.schoolLogo{
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+/* 添加用户页面 */
+#schoolList{
+	margin-left:126px;
+	line-height:29px;
+}
+#schoolList .layui-form-checkbox{
+	position:relative;
+	margin-right:40px;
+}
+#schoolList .layui-form-checkbox i{
+	position: absolute;
+    left: -14px;
+    top: 39%;
+}
+/* 批量导入 */
+.fileParent{
+	position:relative;
+}
+.file{
+	position:absolute;
+	opacity:0;
+	z-index:999;
+	width:100%;
+	height:100%;
+	left:0
+}
+
+.layui-form-radio{
+	position:relative;
+	margin-right:40px;
+}
+.layui-form-radio .layui-icon{
+	top:32%;
+	margin-right:15px;
+}
+/* 复选框居中 */
+.layui-table-cell .layui-form-checkbox[lay-skin="primary"]{
+	transform: translateX(15px);
+}

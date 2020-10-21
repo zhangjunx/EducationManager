@@ -1,0 +1,107 @@
+html,body{
+	height:100%;
+}
+.layui-fluid{
+	height:calc(100% - 32px);
+}
+.layui-row,.layui-col-md3,.layui-col-md9,.layui-card{
+	height:100%;
+}
+.layui-col-md3{
+	border-right:1px solid #ddd;
+}
+.userRights .layui-card-body{
+	height: calc(100% - 64px);
+    overflow: auto;
+}
+.userRights .ew-tree-table{
+	margin:0;
+}
+.userBox li{
+	font-size: 18px;
+    border: 1px solid #ddd;
+    text-align: left;
+    color: #333;
+    line-height: 60px;
+    width: 261PX;
+    cursor: pointer;
+    height: 60px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-left: 59px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background: url(../img/wx_approver2.png) no-repeat 24px center;
+}
+.userBox li.current{
+	background: url(../img/wx_approver1.png) no-repeat 24px center;
+    color: #008EDE;
+    border-color: #008EDE;
+}
+.iconSelect {
+    position: absolute;
+    z-index: 9;
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+#upload {
+    position: absolute;
+    float: left;
+    opacity: 0;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+}
+/* 用户角色分配 */
+.backUser li{
+	display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 290px;
+    height: 110px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 10px;
+    line-height: 110px;
+    cursor: pointer;
+}
+.backUser li .personPhoto{
+	width: 75px;
+    height: 87px;
+    float: left;
+}
+.backUser li .personPhoto img{
+	width: 75px;
+    height: 87px;
+    vertical-align: middle;
+}
+.backUser li .holderInfo{
+	float: left;
+    width: 195px;
+    padding-top: 30px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.backUser li .holderInfo .holdername{
+	display:inline-block;
+	width:138px;
+	vertical-align:top;
+}
+.backUser li .holderInfo .holderno{
+	display:inline-block;
+	width:120px;
+	vertical-align:top;
+}
+.backUser li .holderInfo p{
+	line-height: 28px;
+}
+.backUser li.current{
+	background: url(../img/check.png) no-repeat right bottom;
+    border-color: rgb(9,179,255);
+}
+
+
+
+

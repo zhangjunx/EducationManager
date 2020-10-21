@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>用户权限</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../../layuiadmin/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" href="css/userRights.css" media="all">
+</head>
+<body>
+  <div class="layui-fluid">
+       <div class="layui-row userRights">
+       		<div class="layui-col-md3">
+				<div class="layui-card">
+					<div class="layui-card-header">角色
+						<!-- <div class="layui-inline layui-layout-right" style="margin-right:10px;">
+							<button class="layui-btn layui-btn-sm" id="addRole">添加</button>
+							<button class="layui-btn layui-btn-sm" id="updateRole">修改</button>
+							<button class="layui-btn layui-btn-sm layui-bg-red" id="delRole">删除</button>
+						</div> -->
+					</div>
+					<div class="layui-card-body">
+						<input type="text" id="roleName" class="layui-input" style="width:261px;margin:0 auto;margin-bottom:20px;display:none" autocomplete="off" />
+						<ul class="userBox">
+							<!-- <li>管理员</li>  -->
+						</ul>
+					</div>
+				</div>
+			</div>
+       		<div class="layui-col-md9">
+       			<div class="layui-card">
+					<div class="layui-card-header">权限</div>
+					<div class="layui-card-body">
+						<table id="LAY-user-manage" lay-filter="LAY-user-manage"></table>
+					</div>
+				</div>
+       		</div>
+       </div>
+  </div>
+  <!-- 新增菜单 -->
+	<div id="menu_add_update" class="layui-form" style="display: none;padding: 20px 30px 0 0;">
+		<input type="hidden" id="fid">
+		<!-- 新增菜单 -->
+		<div class="search-box" id="add_menu">
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">菜单名称</label>
+					<div class=layui-input-block>
+						<input type="text"  id="title1" placeholder="" class="layui-input" autocomplete="off" />
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">叶子节点</label>
+					<div class=layui-input-block>
+						<select class="ifPage">
+							<option value="0">否</option>
+							<option value="1">是</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">大屏显示</label>
+					<div class=layui-input-block>
+						<select class="ifScreenFull">
+							<option value="0">否</option>
+							<option value="1">是</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">父级名称</label>
+					<div class=layui-input-block>
+						<input type="text" id="parentName1" placeholder=""
+						class="layui-input" readonly  autocomplete="off"/>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">序号</label>
+					<div class=layui-input-block>
+						<input type="text"  id="orderId1" placeholder=""
+						class="layui-input" autocomplete="off"/>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">字体图标</label>
+					<div class="layui-input-block">
+						<input type="text"  id="icon" placeholder=""
+						class="layui-input" autocomplete="off"/>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">页面路径</label>
+					<div class=layui-input-block>
+						<input type="text"  id="modelPath" placeholder=""
+						class="layui-input" autocomplete="off"/>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">备注</label>
+						<div class="layui-input-block">
+							<textarea name="remark1" id="remark1" placeholder="请输入内容" class="layui-textarea"></textarea>
+						</div>
+					</div>
+			</div>
+		</div>
+			<!-- 新增按钮 -->
+		<div class="search-box" style="border:none" id="add_button">
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">按钮名称</label>
+					<div class=layui-input-block>
+						<input type="text"  id="title3" placeholder=""
+						class="layui-input" autocomplete="off"/>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">按钮编码</label>
+					<div class=layui-input-block>
+						<input type="text"  id="code3" placeholder=""
+						class="layui-input" autocomplete="off"/>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">归属页面</label>
+					<div class=layui-input-block>
+						<input type="text" id="parentName3" placeholder=""
+						class="layui-input" readonly autocomplete="off"/>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-col-lg6">
+					<label class="layui-form-label">序号</label>
+					<div class=layui-input-block>
+						<input type="text"  id="orderId3" placeholder=""
+						class="layui-input" autocomplete="off"/>
+					</div>
+				</div>
+			</div>
+			<div class="layui-form-item">
+					<div class="layui-col-lg6">
+						<label class="layui-form-label">备注</label>
+						<div class="layui-input-block">
+							<textarea name="remark3" id="remark3" placeholder="请输入内容" class="layui-textarea"></textarea>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+  <script src="../public_js/path.js"></script>  
+  <script src="../public_js/jquery.min.js"></script>  
+  <script src="../layui/layui.js"></script> 
+  <script src="js/userRights.js"></script> 
+</body>
+</html>
